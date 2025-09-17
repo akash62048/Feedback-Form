@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Feedback Form</title>
 </head>
 <body>
+<form th:action="@{/save}" method="post" th:object="${newPost}">
+
+
 <h2 style = "text-align :center">Feedback Form</h2>
 <hr>
-<textarea style="width:400px; height:200px;" name ="Feedback" placeholder ="Write your feedback here..."></textarea><br>
-<button>Submit</button>
+<textarea style="width:400px; height:200px;"
+          th:field="*{content}"
+          placeholder ="Write your feedback here..."></textarea><br>
+<button type="submit">Submit</button>
+</form>
 
 </body>
 </html>
